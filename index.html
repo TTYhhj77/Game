@@ -1,160 +1,319 @@
 <!DOCTYPE html>
 <html lang="th" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mission: Escape the Middle East</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome CDN for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts: Prompt & Sarabun -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Mission: Escape the Middle East</title>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        sand: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            200: '#fde68a',
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
-                            900: '#78350f',
-                        },
-                        desert: {
-                            dark: '#0f172a',
-                            panel: '#1e293b',
-                            accent: '#d97706'
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['Prompt', 'sans-serif'],
-                        body: ['Sarabun', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* Custom Styles & Visual Effects */
-        body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: #0b1120;
-            color: #f1f5f9;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                sand: { 50:'#fffbeb',100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#fbbf24',500:'#f59e0b',600:'#d97706',700:'#b45309',800:'#92400e',900:'#78350f' },
+                desert: { dark:'#0f172a', panel:'#1e293b', accent:'#d97706' }
+            },
+            fontFamily: { heading:['Prompt','sans-serif'], body:['Sarabun','sans-serif'] }
         }
+    }
+}
+</script>
 
-        .font-heading {
-            font-family: 'Prompt', sans-serif;
-        }
-
-        /* Glassmorphism Panels */
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.88);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(245, 158, 11, 0.25);
-        }
-
-        .glass-card {
-            background: rgba(30, 41, 59, 0.75);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        /* Glowing Effects */
-        .gold-glow {
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
-        }
-
-        .gold-button {
-            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-            transition: all 0.2s ease;
-        }
-
-        .gold-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-        }
-
-        .gold-button:active {
-            transform: translateY(1px);
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-gold {
-            0%, 100% { border-color: rgba(245, 158, 11, 0.8); box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }
-            50% { border-color: rgba(251, 191, 36, 1); box-shadow: 0 0 25px rgba(251, 191, 36, 0.8); }
-        }
-
-        .pulse-node {
-            animation: pulse-gold 2s infinite;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d97706;
-            border-radius: 4px;
-        }
-    </style>
+<style>
+body{font-family:'Sarabun',sans-serif;background-color:#0b1120;color:#f1f5f9;user-select:none;-webkit-tap-highlight-color:transparent;}
+.font-heading{font-family:'Prompt',sans-serif;}
+.glass-panel{background:rgba(15,23,42,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(245,158,11,0.25);}
+.gold-glow{box-shadow:0 0 20px rgba(245,158,11,0.3);}
+.gold-button{background:linear-gradient(135deg,#fbbf24 0%,#d97706 100%);transition:all .2s ease;}
+.gold-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,158,11,.4);}
+.gold-button:active{transform:translateY(1px);}
+.gold-button:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.animate-float{animation:float 3s ease-in-out infinite;}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(245,158,11,.55)}70%{box-shadow:0 0 0 14px rgba(245,158,11,0)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}
+.pulse-ring{animation:pulseRing 2s infinite;}
+@keyframes popIn{0%{opacity:0;transform:scale(.9) translateY(8px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+.pop-in{animation:popIn .25s ease-out;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.shake{animation:shake .3s ease-in-out;}
+@keyframes flashGreen{0%{background-color:rgba(16,185,129,.35)}100%{background-color:transparent}}
+.flash-green{animation:flashGreen .8s ease-out;}
+@keyframes flashRed{0%{background-color:rgba(239,68,68,.35)}100%{background-color:transparent}}
+.flash-red{animation:flashRed .8s ease-out;}
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:#0f172a;}
+::-webkit-scrollbar-thumb{background:#d97706;border-radius:4px;}
+.stat-bar-track{background:#0f172a;border-radius:9999px;overflow:hidden;}
+.stat-bar-fill{transition:width .5s ease;}
+.node-line{background:repeating-linear-gradient(to bottom,#334155 0,#334155 6px,transparent 6px,transparent 12px);}
+@media (prefers-reduced-motion:reduce){.animate-float,.pulse-ring,.pop-in,.shake,.flash-green,.flash-red{animation:none!important;}}
+</style>
 </head>
 <body class="h-full flex flex-col bg-slate-950 text-slate-100 overflow-x-hidden">
 
-    <!-- TOP NAVIGATION & VITAL STATS HEADER -->
-    <header class="sticky top-0 z-40 w-full glass-panel border-b border-amber-500/30 px-3 py-2.5 shadow-lg">
-        <div class="max-w-4xl mx-auto flex items-center justify-between gap-2">
-            
-            <!-- Game Title & Audio Toggle -->
-            <div class="flex items-center gap-2">
-                <button id="btn-sound" onclick="sound.toggle()" class="w-9 h-9 rounded-xl bg-slate-800 border border-amber-500/30 flex items-center justify-center text-amber-400 hover:bg-slate-700 transition">
-                    <i id="icon-sound" class="fa-solid fa-volume-high text-sm"></i>
-                </button>
-                <div class="hidden sm:block">
-                    <h1 class="text-xs font-heading font-bold text-amber-400 tracking-wider">MISSION: ESCAPE</h1>
-                    <p class="text-[10px] text-slate-400">เอเชียตะวันตกเฉียงใต้</p>
+<!-- TOP NAVIGATION & VITAL STATS HEADER -->
+<header class="sticky top-0 z-40 w-full glass-panel border-b border-amber-500/30 px-3 py-2.5 shadow-lg">
+    <div class="max-w-4xl mx-auto flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+            <button id="btn-sound" class="w-9 h-9 rounded-xl bg-slate-800 border border-amber-500/30 flex items-center justify-center text-amber-400 hover:bg-slate-700 transition">
+                <i id="icon-sound" class="fa-solid fa-volume-high text-sm"></i>
+            </button>
+            <div class="hidden sm:block">
+                <h1 class="text-xs font-heading font-bold text-amber-400 tracking-wider">MISSION: ESCAPE</h1>
+                <p class="text-[10px] text-slate-400">เอเชียตะวันตกเฉียงใต้</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2 md:gap-4 text-xs font-semibold">
+            <div class="flex items-center gap-1.5 bg-slate-900/90 border border-sky-500/40 px-2.5 py-1.5 rounded-xl shadow-inner">
+                <i class="fa-solid fa-droplet text-sky-400"></i>
+                <div class="flex flex-col w-14">
+                    <span class="text-[9px] text-sky-300 leading-none mb-0.5">น้ำดื่ม</span>
+                    <div class="stat-bar-track h-1.5 w-full"><div id="bar-water" class="stat-bar-fill bg-sky-400 h-full" style="width:100%"></div></div>
+                </div>
+                <span id="stat-water" class="text-sky-200 font-bold leading-tight text-[11px]">100%</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 bg-slate-900/90 border border-emerald-500/40 px-2.5 py-1.5 rounded-xl shadow-inner">
+                <i class="fa-solid fa-utensils text-emerald-400"></i>
+                <div class="flex flex-col w-14">
+                    <span class="text-[9px] text-emerald-300 leading-none mb-0.5">เสบียง</span>
+                    <div class="stat-bar-track h-1.5 w-full"><div id="bar-food" class="stat-bar-fill bg-emerald-400 h-full" style="width:100%"></div></div>
+                </div>
+                <span id="stat-food" class="text-emerald-200 font-bold leading-tight text-[11px]">100%</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 bg-slate-900/90 border border-amber-500/40 px-2.5 py-1.5 rounded-xl shadow-inner">
+                <i class="fa-solid fa-hourglass-half text-amber-400"></i>
+                <div class="flex flex-col">
+                    <span class="text-[9px] text-amber-300 leading-none">เวลา</span>
+                    <span id="stat-time" class="text-amber-200 font-bold leading-tight">7 วัน</span>
+                </div>
+            </div>
+        </div>
+
+        <button id="btn-passport" class="relative px-3 py-1.5 rounded-xl bg-amber-500/20 border border-amber-500/50 hover:bg-amber-500/30 text-amber-300 flex items-center gap-1.5 text-xs font-bold transition">
+            <i class="fa-solid fa-passport text-amber-400 text-sm"></i>
+            <span class="hidden md:inline">ตราประทับ</span>
+            <span id="passport-badge" class="bg-amber-500 text-slate-950 rounded-full w-4 h-4 text-[10px] flex items-center justify-center font-bold">0</span>
+        </button>
+    </div>
+</header>
+
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 max-w-4xl w-full mx-auto p-3 sm:p-5 flex flex-col justify-center">
+
+    <!-- INTRO CUTSCENE SCREEN -->
+    <section id="cutscene-view" class="w-full space-y-5 text-center">
+        <div class="glass-panel p-6 md:p-8 rounded-3xl border border-amber-500/40 shadow-2xl relative overflow-hidden">
+            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-amber-600 to-amber-300 p-1 mb-4 animate-float shadow-lg shadow-amber-500/30">
+                <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-amber-400 text-3xl">
+                    <i class="fa-solid fa-plane-slash"></i>
                 </div>
             </div>
 
-            <!-- Vital Stats (Water, Food, Days) -->
-            <div class="flex items-center gap-2 md:gap-4 text-xs font-semibold">
-                <!-- Water -->
-                <div id="box-stat-water" class="flex items-center gap-1.5 bg-slate-900/90 border border-sky-500/40 px-2.5 py-1.5 rounded-xl shadow-inner transition-all duration-300">
-                    <i class="fa-solid fa-droplet text-sky-400 animate-pulse"></i>
-                    <div class="flex flex-col">
-                        <span class="text-[9px] text-sky-300 leading-none">น้ำดื่ม</span>
-                        <span id="stat-water" class="text-sky-200 font-bold leading-tight">100%</span>
+            <h2 class="text-2xl md:text-3xl font-heading font-extrabold text-amber-300 mb-2 tracking-wide">
+                MISSION: ESCAPE THE MIDDLE EAST
+            </h2>
+            <p class="text-xs md:text-sm text-amber-200/80 mb-6 font-medium">ภารกิจวางแผนฝ่าเอเชียตะวันตกเฉียงใต้ กลับสู่ประเทศไทย</p>
+
+            <div class="bg-slate-950/80 p-4 md:p-5 rounded-2xl border border-slate-800 text-left space-y-3 text-xs md:text-sm text-slate-300 leading-relaxed max-w-xl mx-auto shadow-inner">
+                <p class="text-amber-300 font-semibold flex items-center gap-2">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> แจ้งเตือนภารกิจฉุกเฉิน:
+                </p>
+                <p>เที่ยวบินของคุณต้องลงจอดฉุกเฉินที่คูเวต คุณต้องใช้ความรู้ทางภูมิศาสตร์ตอบคำถามผ่านด่านแต่ละประเทศ พร้อมวางแผนเส้นทางเดินทางอย่างชาญฉลาด เพื่อบริหารจัดการทรัพยากร น้ำดื่ม เสบียง และเวลา ให้เพียงพอตลอดการเดินทาง หากทรัพยากรใดหมดลงก่อนถึงไทย ภารกิจจะล้มเหลวทันที</p>
+                <p class="text-slate-400 text-[11px] flex items-start gap-1.5"><i class="fa-solid fa-circle-info text-amber-500 mt-0.5"></i> เคล็ดลับ: เส้นทางด่วนเร็วแต่ใช้ทรัพยากรมาก ส่วนเส้นทางปลอดภัยประหยัดทรัพยากรแต่ใช้เวลานานกว่า ตอบคำถามถูกจะได้รับเสบียงเพิ่มเติม</p>
+            </div>
+
+            <div class="pt-6">
+                <button id="btn-start" class="gold-button w-full sm:w-auto px-8 py-3.5 rounded-2xl font-heading font-bold text-slate-950 text-base shadow-xl flex items-center justify-center gap-2 mx-auto">
+                    <i class="fa-solid fa-compass text-lg"></i>
+                    <span>เริ่มต้นวางแผนการเดินทาง</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP ROUTE SELECTION SCREEN -->
+    <section id="map-view" class="hidden w-full space-y-4">
+        <div class="glass-panel p-4 md:p-6 rounded-3xl border border-amber-500/30 shadow-2xl">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-5 pb-3 border-b border-slate-800">
+                <div>
+                    <h2 class="text-lg md:text-xl font-heading font-bold text-amber-300 flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot text-amber-400"></i> แผนที่เส้นทางข้ามแดน
+                    </h2>
+                    <p class="text-xs text-slate-400">ตอบคำถามผ่านด่านและเลือกเส้นทางเดินทางไปยังจุดหมายถัดไป</p>
+                </div>
+                <span id="current-location-badge" class="self-start md:self-auto px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-semibold">
+                    <i class="fa-solid fa-location-dot mr-1"></i><span id="current-location-text">คูเวต</span>
+                </span>
+            </div>
+
+            <div id="node-list" class="space-y-0"></div>
+        </div>
+    </section>
+
+    <!-- WIN SCREEN -->
+    <section id="win-view" class="hidden w-full space-y-5 text-center">
+        <div class="glass-panel p-6 md:p-10 rounded-3xl border border-emerald-500/40 shadow-2xl">
+            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-emerald-500 to-emerald-300 p-1 mb-4 animate-float shadow-lg shadow-emerald-500/30">
+                <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-emerald-400 text-3xl">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                </div>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-heading font-extrabold text-emerald-300 mb-2">กลับถึงประเทศไทยแล้ว!</h2>
+            <p class="text-sm text-slate-300 mb-6">คุณฝ่าฟันการเดินทางข้ามเอเชียตะวันตกเฉียงใต้และเก็บตราประทับได้ครบทุกด่าน</p>
+            <div id="win-summary" class="grid grid-cols-3 gap-3 max-w-md mx-auto mb-6 text-xs"></div>
+            <button id="btn-restart-win" class="gold-button px-8 py-3.5 rounded-2xl font-heading font-bold text-slate-950 text-base shadow-xl inline-flex items-center gap-2">
+                <i class="fa-solid fa-rotate-right"></i><span>เล่นอีกครั้ง</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- LOSE SCREEN -->
+    <section id="lose-view" class="hidden w-full space-y-5 text-center">
+        <div class="glass-panel p-6 md:p-10 rounded-3xl border border-red-500/40 shadow-2xl">
+            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-red-600 to-red-400 p-1 mb-4 shadow-lg shadow-red-500/30">
+                <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-red-400 text-3xl">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-heading font-extrabold text-red-300 mb-2">ภารกิจล้มเหลว</h2>
+            <p id="lose-reason" class="text-sm text-slate-300 mb-6">ทรัพยากรของคุณหมดลงระหว่างทาง</p>
+            <button id="btn-restart-lose" class="gold-button px-8 py-3.5 rounded-2xl font-heading font-bold text-slate-950 text-base shadow-xl inline-flex items-center gap-2">
+                <i class="fa-solid fa-rotate-right"></i><span>ลองอีกครั้ง</span>
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<!-- PUZZLE MODAL -->
+<div id="puzzle-modal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-sm">
+    <div class="pop-in glass-panel w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl border border-amber-500/40 shadow-2xl max-h-[92vh] overflow-y-auto">
+
+        <!-- STEP 1: PUZZLE -->
+        <div id="puzzle-step" class="p-5 md:p-6">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span id="puzzle-flag" class="text-3xl"></span>
+                    <div>
+                        <p class="text-[10px] text-amber-400 font-semibold tracking-wide">ด่านตรวจคำถาม</p>
+                        <h3 id="puzzle-country" class="font-heading font-bold text-amber-200 text-lg leading-tight"></h3>
                     </div>
                 </div>
+                <button id="btn-close-puzzle" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 text-sm">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
 
-                <!-- Food -->
-                <div id="box-stat-food" class="flex items-center gap-1.5 bg-slate-900/90
+            <p id="puzzle-question" class="text-sm md:text-base text-slate-200 font-medium mb-4 leading-relaxed"></p>
+
+            <div id="puzzle-options" class="grid grid-cols-1 gap-2.5 mb-3"></div>
+
+            <p id="puzzle-feedback" class="text-xs font-semibold text-center min-h-[16px] mb-2"></p>
+
+            <button id="btn-to-route" disabled class="gold-button w-full py-3 rounded-xl font-heading font-bold text-slate-950 text-sm shadow-lg flex items-center justify-center gap-2">
+                <span>ถัดไป: เลือกเส้นทาง</span><i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- STEP 2: ROUTE CHOICE -->
+        <div id="route-step" class="hidden p-5 md:p-6">
+            <div class="flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-route text-amber-400 text-lg"></i>
+                <div>
+                    <p class="text-[10px] text-amber-400 font-semibold tracking-wide">วางแผนเส้นทาง</p>
+                    <h3 class="font-heading font-bold text-amber-200 text-lg leading-tight">เลือกวิธีเดินทางสู่ <span id="route-target-name"></span></h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button data-mode="fast" class="route-btn text-left p-4 rounded-2xl bg-slate-900/90 border border-orange-500/40 hover:border-orange-400 hover:bg-slate-900 transition">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-truck-fast text-orange-400"></i>
+                        <span class="font-heading font-bold text-orange-300 text-sm">เส้นทางด่วน</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mb-3">ลัดผ่านทะเลทราย รวดเร็วแต่หนักหน่วง</p>
+                    <div class="space-y-1 text-[11px]">
+                        <div class="flex justify-between"><span class="text-amber-300"><i class="fa-solid fa-hourglass-half mr-1"></i>เวลา</span><span class="text-slate-300 font-semibold">-1 วัน</span></div>
+                        <div class="flex justify-between"><span class="text-sky-300"><i class="fa-solid fa-droplet mr-1"></i>น้ำดื่ม</span><span class="text-slate-300 font-semibold">-20%</span></div>
+                        <div class="flex justify-between"><span class="text-emerald-300"><i class="fa-solid fa-utensils mr-1"></i>เสบียง</span><span class="text-slate-300 font-semibold">-15%</span></div>
+                    </div>
+                </button>
+
+                <button data-mode="safe" class="route-btn text-left p-4 rounded-2xl bg-slate-900/90 border border-sky-500/40 hover:border-sky-400 hover:bg-slate-900 transition">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-shield-halved text-sky-400"></i>
+                        <span class="font-heading font-bold text-sky-300 text-sm">เส้นทางปลอดภัย</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mb-3">อ้อมผ่านเมืองใหญ่ ประหยัดแต่ใช้เวลานาน</p>
+                    <div class="space-y-1 text-[11px]">
+                        <div class="flex justify-between"><span class="text-amber-300"><i class="fa-solid fa-hourglass-half mr-1"></i>เวลา</span><span class="text-slate-300 font-semibold">-2 วัน</span></div>
+                        <div class="flex justify-between"><span class="text-sky-300"><i class="fa-solid fa-droplet mr-1"></i>น้ำดื่ม</span><span class="text-slate-300 font-semibold">-10%</span></div>
+                        <div class="flex justify-between"><span class="text-emerald-300"><i class="fa-solid fa-utensils mr-1"></i>เสบียง</span><span class="text-slate-300 font-semibold">-10%</span></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- PASSPORT MODAL -->
+<div id="passport-modal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-sm">
+    <div class="pop-in glass-panel w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl border border-amber-500/40 shadow-2xl max-h-[85vh] overflow-y-auto">
+        <div class="p-5 md:p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-heading font-bold text-amber-200 text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-passport text-amber-400"></i> พาสปอร์ตของคุณ
+                </h3>
+                <button id="btn-close-passport" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 text-sm">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="passport-stamps" class="grid grid-cols-3 gap-3"></div>
+            <p id="passport-empty" class="text-xs text-slate-500 text-center py-6">ยังไม่มีตราประทับ เริ่มเดินทางเพื่อสะสมตราประทับ!</p>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------------- SOUND ---------------- */
+const sound = {
+    on: true,
+    ctx: null,
+    ensure(){ if(!this.ctx){ try{ this.ctx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ this.ctx=null; } } return this.ctx; },
+    toggle(){
+        this.on = !this.on;
+        document.getElementById('icon-sound').className = this.on ? 'fa-solid fa-volume-high text-sm' : 'fa-solid fa-volume-xmark text-sm';
+    },
+    beep(freq, dur, type){
+        if(!this.on) return;
+        const ctx = this.ensure();
+        if(!ctx) return;
+        try{
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = type || 'sine';
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(0.08, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + dur);
+            osc.connect(gain).connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + dur);
+        }catch(e){}
+    },
+    click(){ this.beep(420, 0.08, 'triangle'); },
+    correct(){ this.beep(660, 0.12, 'sine'); setTimeout(()=>this.beep(880,0.15,'sine'), 90); },
+    wrong(){ this.beep(180, 0.25, 'sawtooth'); },
+    
